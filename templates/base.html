@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    {%block css%}{%endblock%}
+
+     <link rel="stylesheet" href="{{ url_for('static', filename='base.css',v = 4) }}">
+</head>
+<body>
+    <div class="topnav">
+        <a  href="#home">Home</a>
+        <a href="/mytasks">My taks</a>
+        {% if user_in_session %}
+        <a href="/logout" id = "logoutNavBar">LogOut</a>
+        {% else %}
+        <a href="/login" id = "loginNavBar">Login</a>
+        {% endif %}
+        <br>
+        {%block content%}{% endblock %}
+    </div>
+</body>
+</html>

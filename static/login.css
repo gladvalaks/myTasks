@@ -1,0 +1,27 @@
+
+.login{
+  text-align: center;
+  width: 15%;
+  border: 1px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.input-login {
+    width: 100%;
+  border: 2px solid blue;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 3% 0%;
+  
+}
+#submit-login{
+    margin-top: 10px;
+    background-color: blue;
+    color:white;
+    padding: 2% 4%;
+}
+

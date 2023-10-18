@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+
+{%block title%}
+Войти
+{% endblock%}
+{% block css%}
+     <link rel="stylesheet" href="{{ url_for('static', filename='register.css',v = 1) }}">
+{%endblock%}
+
+{%block content%}
+    <div  class = "register">
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+        <p >Регистрация аккаунта</p>
+            {{form.username(class ="input-register" , id="user-input",placeholder = "Username")}}
+            {{form.email(class ="input-register" , id="email-input",type = "email",placeholder = "Email")}}
+            {{form.password(class ="input-register" , id="password-input",type ="password",placeholder = "Password")}}
+            {{form.submit(  id="submit-register")}}
+        </form>
+    </div>
+{%endblock %}

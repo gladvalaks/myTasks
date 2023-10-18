@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{%block title%}
+Мои задачи
+{% endblock%}
+{% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='mytasks.css',v = 9) }}">
+{%endblock%}
+
+{%block content%}
+<div class="create-task">
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>Создайте вашу задачу</p>
+        {{form.name}}
+        {{form.description}}
+        {{form.coins(type = "number")}}
+        {{form.submit}}
+    </form>
+</div>
+<div class="task-list">
+    {% for item in dictionary%}
+    <div class="task">
+        <h2>{{item.name}}</h2>
+        <p class="task-description">{{item.description}}</p>
+        <h1 class="task-coins"> {{item.coins}}</h1>
+    </div>
+    {% endfor %}
+</div>
+
+{%endblock %}

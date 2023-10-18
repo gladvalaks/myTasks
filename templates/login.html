@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+
+{%block title%}
+Войти
+{% endblock%}
+{% block css%}
+     <link rel="stylesheet" href="{{ url_for('static', filename='login.css',v = 3) }}">
+{%endblock%}
+
+{%block content%}
+    <div  class = "login">
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p >Вход в аккаунт</p>
+            {{form.email(class ="input-login" , id="email-input",type = "email" , placeholder = "email")}}
+            {{form.password(class ="input-login" , id="password-input",type ="password", placeholder = "password")}}
+            {{form.submit(  id="submit-login")}}
+        </form>
+        <a href = '/register' class = "register-href">Зарегистрироваться</a>
+    </div>
+{%endblock %}
